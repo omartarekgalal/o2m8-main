@@ -1,10 +1,13 @@
+version: '3.8'
 services:
   db:
-    image: postgres:16.4
+    image: postgres:15
     restart: always
-    environment:
-      POSTGRES_PASSWORD: admin
-      POSTGRES_USER: admin
-      POSTGRES_DB: saas-starter-kit
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    restart: always
     ports:
-      - 5432:5432
+      - "3000:3000"
