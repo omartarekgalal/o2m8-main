@@ -3,6 +3,10 @@ services:
   db:
     image: postgres:15
     restart: always
+    environment:
+      POSTGRES_USER: o2m8user
+      POSTGRES_PASSWORD: GjS9hQEgCq9yyXOcENzOnr80
+      POSTGRES_DB: o2m8db
     volumes:
       - db-data:/var/lib/postgresql/data
 
